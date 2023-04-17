@@ -70,6 +70,7 @@ export default function App() {
 
       <View style={styles.body}>
         <TextInput
+          keyboardType="numeric"
           underlineColor="transparent"
           style={styles.inputss}
           label="Price in Rs."
@@ -79,6 +80,7 @@ export default function App() {
           theme={{colors: {text: 'white'}}}
         />
         <TextInput
+          keyboardType="numeric"
           underlineColor="transparent"
           style={styles.inputss}
           label="Discount Percentage"
@@ -106,7 +108,7 @@ export default function App() {
         </Text>
         <Text>Original Price – Discount = Final Price</Text>
 
-        <ScrollView scrollEnabled={true}>
+        <ScrollView>
           {history.map((Rupees, index) => (
             <View style={styles.history} key={index}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
