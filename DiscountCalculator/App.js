@@ -46,6 +46,12 @@ export default function App() {
     setNewSave('');
   };
 
+  const deletetask = index => {
+    let hist = [...history];
+    hist.splice(index, 1);
+    setHistory(hist);
+  };
+
   return (
     <View
       style={{
@@ -111,7 +117,13 @@ export default function App() {
         <ScrollView>
           {history.map((Rupees, index) => (
             <View style={styles.history} key={index}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                }}>
                 <View style={styles.count}>
                   <Text
                     style={{
@@ -130,6 +142,11 @@ export default function App() {
                   }}>
                   {Rupees}
                 </Text>
+                <Button
+                  icon="delete"
+                  textColor="orange"
+                  key={index}
+                  onPress={() => deletetask(index)}></Button>
               </View>
             </View>
           ))}
